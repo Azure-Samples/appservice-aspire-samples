@@ -1,0 +1,21 @@
+<Project Sdk="Aspire.AppHost.Sdk/13.0.0">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UserSecretsId>3ec5940f-40a3-4605-b5ac-66da44782d18</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspire.Hosting.Azure.AppService" Version="13.0.0-preview.1.25560.3" />
+    <PackageReference Include="Aspire.Hosting.Azure.CognitiveServices" Version="13.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AspireWithOpenAI.ApiService\AspireWithOpenAI.ApiService.csproj" />
+    <ProjectReference Include="..\AspireWithOpenAI.Web\AspireWithOpenAI.Web.csproj" />
+  </ItemGroup>
+
+</Project>

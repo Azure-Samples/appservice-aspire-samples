@@ -1,0 +1,3 @@
+.app-shell { display:flex; }
+.sidebar { flex-shrink:0; }
+.main { flex-grow:1; }
