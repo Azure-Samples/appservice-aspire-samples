@@ -3,6 +3,35 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
 
+# MacOSX files
+# General
+**/.DS_Store
+**/._*
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
 # User-specific files
 *.rsuser
 *.suo
@@ -209,6 +238,7 @@ publish/
 PublishScripts/
 
 # NuGet Packages
+.packages/*
 *.nupkg
 # NuGet Symbol Packages
 *.snupkg
@@ -343,6 +373,10 @@ paket-files/
 **/__pycache__/
 *.pyc
 
+# Python virtual environment directories
+.venv/
+**/.venv/
+
 # Cake - Uncomment if you are using it
 #tools/**
 #!tools/packages.config
@@ -403,6 +437,7 @@ FodyWeavers.xsd
 !.vscode/launch.json
 !.vscode/extensions.json
 !.vscode/*.code-snippets
+*.code-workspace
 
 # Local History for Visual Studio Code
 .history/
@@ -416,3 +451,12 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# JetBrains Rider
+*.sln.iml
+.idea
+
+# azd
+**/*/.azure
+**/*/azure.yaml
+**/*/next-steps.md

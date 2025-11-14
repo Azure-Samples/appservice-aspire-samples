@@ -1,0 +1,111 @@
+.chat-thread {
+    list-style: none;
+    margin: 1rem;
+    padding: 0 0 1rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-height: 60vh;
+    overflow-y: auto;
+    background: linear-gradient(#f3f5f8,#eef1f4);
+    border-radius: 1rem;
+    padding: 1.25rem;
+}
+
+.message {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+        "avatar meta"
+        "avatar bubble";
+    column-gap: .75rem;
+    row-gap: .35rem;
+    align-items: start;
+    width: 100%;
+}
+
+.message.assistant { justify-content: start; }
+.message.user { justify-content: end; }
+
+.message.user {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+        "meta avatar"
+        "bubble avatar";
+}
+
+.avatar {
+    grid-area: avatar;
+    width: 38px;
+    height: 38px;
+    font-size: .65rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,.15);
+}
+
+.assistant-avatar {
+    background: radial-gradient(circle at 30% 30%, #ffb36b, #a070ff 70%);
+}
+
+.user-avatar {
+    background: #0d6efd;
+}
+
+.meta {
+    grid-area: meta;
+    font-size: .65rem;
+    font-weight: 600;
+    color: #555;
+    padding-top: .25rem;
+}
+
+.message.user .meta {
+    text-align: right;
+}
+
+.bubble {
+    grid-area: bubble;
+    padding: .75rem 1rem;
+    border-radius: 1.25rem;
+    font-size: .9rem;
+    line-height: 1.3;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    box-shadow: 0 2px 4px rgba(0,0,0,.08);
+}
+
+.assistant .bubble {
+    background: #fff;
+    color: #1a1a1a;
+}
+
+.user .bubble {
+    background: #0d6efd;
+    color: #fff;
+}
+
+.bubble code {
+    background: rgba(0,0,0,.07);
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-size: .8rem;
+}
+
+.bubble pre {
+    background: #1e1e1e;
+    color: #f8f8f2;
+    padding: .75rem 1rem;
+    border-radius: .75rem;
+    overflow-x: auto;
+    font-size: .75rem;
+}
+
+@media (max-width: 600px) {
+    .bubble { max-width: 90%; }
+    .chat-thread { max-height: 70vh; }
+}

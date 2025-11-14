@@ -1,0 +1,69 @@
+﻿@page "/chat"
+@rendermode InteractiveServer
+@inject ChatApiClient ChatApiClient
+
+<PageTitle>Chat</PageTitle>
+
+<h1>Chat Assistant</h1>
+
+<textarea @bind="userMessageText" placeholder="Ask the AI assistant" style="width:100%;height:120px;"></textarea>
+<br />
+<button class="btn btn-primary" @onclick="GetResponse" disabled="@isBusy">Send</button>
+
+<ul class="chat-thread">
+    @foreach (var m in messages)
+    {
+        <li class="message @(m.IsAssistant ? "assistant" : "user")">
+            @if (m.IsAssistant)
+            {
+                <div class="avatar assistant-avatar" aria-hidden="true">🤖</div>
+                <div class="meta">Assistant</div>
+            }
+            else
+            {
+                <div class="avatar user-avatar" aria-hidden="true">You</div>
+                <div class="meta">You</div>
+            }
+            <div class="bubble">@m.Content</div>
+        </li>
+    }
+</ul>
+
+@code {
+    private readonly List<Message> messages = new();
+    private string userMessageText = string.Empty;
+    private string chatResponse = string.Empty;
+    private bool isBusy;
+
+    private async Task GetResponse()
+    {
+        if (string.IsNullOrWhiteSpace(userMessageText))
+        {
+            chatResponse = "Please enter a message.";
+            return;
+        }
+
+        isBusy = true;
+        chatResponse = "Thinking...";
+        var currentUserMessage = userMessageText;
+        userMessageText = string.Empty;
+        messages.Add(new Message { IsAssistant = false, Content = currentUserMessage });
+
+        try
+        {
+            var chatRequest = new ChatRequest(messages);
+            var response = await ChatApiClient.GetChatResponse(chatRequest);
+            chatResponse = response.Content;
+            messages.Add(new Message { IsAssistant = true, Content = response.Content });
+        }
+        catch (Exception ex)
+        {
+            chatResponse = $"Error: {ex.Message}";
+        }
+        finally
+        {
+            isBusy = false;
+            StateHasChanged();
+        }
+    }
+}
