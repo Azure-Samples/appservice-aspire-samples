@@ -52,7 +52,7 @@ You can deploy this Aspire application to Azure App Service using either the **A
 * Navigate to the AppHost directory:
 
     ```powershell
-    cd samples/AspireWithOpenAI/AspireWithOpenAI.AppHost
+    cd samples/AspireWithSql/AspireWithSql.AppHost
     ```
 
 * Initialize azd (select subscription + create an environment name):
@@ -86,7 +86,7 @@ Use for fastest path when you don't need to hand-edit infra templates initially.
 * Navigate to the AppHost directory:
 
     ```powershell
-    cd samples/AspireWithOpenAI/AspireWithOpenAI.AppHost
+    cd samples/AspireWithSql/AspireWithSql.AppHost
     ```
 
 * Authenticate to Azure (if not already):
@@ -103,7 +103,7 @@ Use for fastest path when you don't need to hand-edit infra templates initially.
 
 * When prompted:
    1. Choose subscription
-   2. Choose region (must support Azure OpenAI if creating resource)
+   2. Choose region
    3. Confirm resource names
 
 ## Experiencing the App
