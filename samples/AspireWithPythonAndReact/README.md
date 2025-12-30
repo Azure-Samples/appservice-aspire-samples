@@ -57,7 +57,7 @@ You can deploy this Aspire application to Azure App Service using either the **A
     az login
     ```
 
-* Synthesize infrastructure templates from the Aspire model:
+* Synthesize infrastructure templates from the Aspire model (Optional):
 
     ```powershell
     azd infra synth

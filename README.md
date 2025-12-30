@@ -36,8 +36,8 @@ The Aspire dashboard URL will be printed; open it to inspect components, logs, h
 
 You can deploy a sample using either:
 
-1. **Azure Developer CLI (azd)** – synthesizes infra from the Aspire model (`azd infra synth`) then provisions & deploys (`azd up`).
-2. **Aspire CLI** – one-step deployment (`aspire deploy`) for fast iteration.
+1. **Azure Developer CLI (azd)** – provisions & deploys (`azd up`).
+2. **Aspire CLI** – `aspire deploy` to provision & deploy.
 
 Follow the per-sample `README.md` for detailed steps.
 
