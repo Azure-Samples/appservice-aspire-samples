@@ -8,7 +8,7 @@ var apiService = builder.AddPythonApp("apiservice", "../PythonApiService", "main
 
 var apiEndpoint = apiService.GetEndpoint("http");
 
-var webFrontend = builder.AddNpmApp("webfrontend", "../NodeWebFrontend")
+var webFrontend = builder.AddNodeApp("webfrontend", "../NodeWebFrontend", "node_modules/vite/bin/vite.js")
     .WithHttpEndpoint(env: "PORT")
     .WithExternalHttpEndpoints()
     .WithReference(apiService)
