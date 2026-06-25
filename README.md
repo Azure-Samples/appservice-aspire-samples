@@ -6,9 +6,9 @@ This repository contains a curated set of **Aspire** sample applications focused
 
 | Sample | Focus | Technologies |
 |--------|-------|-------------|
-| [AspireWithOpenAI](./samples/AspireWithOpenAI/) | Integrating Azure OpenAI with API + Blazor/Razor UI | .NET Aspire, ASP.NET Core, Azure OpenAI, Docker |
-| [AspireWithPythonAndReact](./samples/AspireWithPythonAndReact/) | Orchestrating a Python API and a React (Vite) frontend | .NET Aspire, Python (FastAPI-style), Node/React, Docker |
-| [AspireWithSql](./samples/AspireWithSql/) | Azure SQL provisioning, EF Core migrations, API + Web UI | .NET Aspire, ASP.NET Core, EF Core, Azure SQL |
+| [AspireWithOpenAI](./samples/AspireWithOpenAI/) | Integrating Azure OpenAI with API + Blazor/Razor UI | Aspire, ASP.NET Core, Azure OpenAI, Docker |
+| [AspireWithPythonAndReact](./samples/AspireWithPythonAndReact/) | Orchestrating a Python API and a React (Vite) frontend | Aspire, Python (FastAPI-style), Node/React, Docker |
+| [AspireWithSql](./samples/AspireWithSql/) | Azure SQL provisioning, EF Core migrations, API + Web UI | Aspire, ASP.NET Core, EF Core, Azure SQL |
 
 Each sample has its own solution under `samples/<SampleName>/` and a dedicated `AppHost` project that wires resources, environment variables, references, health checks, and launches the Aspire dashboard.
 

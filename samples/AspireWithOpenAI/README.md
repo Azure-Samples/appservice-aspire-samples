@@ -1,6 +1,6 @@
-# .NET Aspire Sample: OpenAI Integration
+# Aspire Sample: OpenAI Integration
 
-This sample demonstrates integrating an Azure OpenAI resource and two .NET projects (API + Web frontend) into a single **.NET Aspire** application for local development and eventual deployment to Azure App Service.
+This sample demonstrates integrating an Azure OpenAI resource and two .NET projects (API + Web frontend) into a single **Aspire** application for local development and eventual deployment to Azure App Service.
 
 ## Architecture
 
@@ -9,7 +9,7 @@ This sample demonstrates integrating an Azure OpenAI resource and two .NET proje
 | `openai` | Azure OpenAI (or connection string) | Provides access to the model (GPT-4o) deployment. Fallback to configured connection string if provided. |
 | `apiservice` | ASP.NET Core API | Exposes endpoints that call Azure OpenAI (chat/completions) & weather features. |
 | `webfrontend` | ASP.NET Core Web (Blazor/Razor) | Frontend UI consuming the API. |
-| AppHost | .NET Aspire orchestrator | Wires resources, projects, health checks, and references; launches the Aspire dashboard. |
+| AppHost | Aspire orchestrator | Wires resources, projects, health checks, and references; launches the Aspire dashboard. |
 
 ## Prerequisites
 

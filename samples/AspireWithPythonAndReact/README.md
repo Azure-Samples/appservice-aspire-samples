@@ -1,6 +1,6 @@
-# .NET Aspire Sample: Python API + React Frontend
+# Aspire Sample: Python API + React Frontend
 
-This sample shows how to orchestrate a **Python FastAPI-style (generic)** service and a **Node/React (Vite)** frontend with .NET Aspire. The AppHost wires ports, environment variables, and ordering.
+This sample shows how to orchestrate a **Python FastAPI-style (generic)** service and a **Node/React (Vite)** frontend with Aspire. The AppHost wires ports, environment variables, and ordering.
 
 ## Architecture
 
@@ -8,7 +8,7 @@ This sample shows how to orchestrate a **Python FastAPI-style (generic)** servic
 |-----------|------|---------|
 | `apiservice` | Python app (`main.py`) | Provides HTTP API (weather). |
 | `webfrontend` | Npm/React app (Vite) | Consumes the Python API; environment variable `APISERVICE_BASE_URL` injected by AppHost. Published as a Dockerfile for deployment. |
-| AppHost | .NET Aspire orchestrator | Defines resources, health, env wiring, and dashboard surfacing. |
+| AppHost | Aspire orchestrator | Defines resources, health, env wiring, and dashboard surfacing. |
 
 ## Prerequisites
 
