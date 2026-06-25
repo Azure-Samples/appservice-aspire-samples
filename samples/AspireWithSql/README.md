@@ -1,6 +1,6 @@
-# .NET Aspire Sample: SQL Server Integration
+# Aspire Sample: SQL Server Integration
 
-This sample demonstrates a .NET Aspire application that provisions an Azure SQL Server & Database and connects an API + Web frontend. Database migrations are applied automatically via a hosted service.
+This sample demonstrates an Aspire application that provisions an Azure SQL Server & Database and connects an API + Web frontend. Database migrations are applied automatically via a hosted service.
 
 ## Architecture
 
@@ -10,7 +10,7 @@ This sample demonstrates a .NET Aspire application that provisions an Azure SQL 
 | `aspiredb` | Azure SQL Database | Application database (default SKU). |
 | `apiservice` | ASP.NET Core API | Provides weather data backed by EF Core (`WeatherForecastContext`); runs migrations via `DatabaseMigrations`. |
 | `webfrontend` | ASP.NET Core Web UI | Consumes the API weather endpoint. |
-| AppHost | .NET Aspire orchestrator | Declares SQL resources, references, health checks, ordering, dashboard. |
+| AppHost | Aspire orchestrator | Declares SQL resources, references, health checks, ordering, dashboard. |
 
 ## Database & Migrations
 
